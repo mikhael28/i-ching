@@ -1,12 +1,21 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
-import { P } from '../NotFoundPage/P';
-import { Link } from 'app/components/Link';
+import { P } from '../../components/P';
+// import { Input } from '../../components/Input';
 import { NavBar } from 'app/components/NavBar';
+import Fire from '../../components/Fire';
 import { Helmet } from 'react-helmet-async';
 import { StyleConstants } from 'styles/StyleConstants';
 
 export function QuestionPage() {
+  // const [question, setQuestion] = useState<string>('');
+
+  // const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+  //   setQuestion(evt.currentTarget.value);
+  // }
+
+  // console.log('Question state: ', question)
+
   return (
     <>
       <Helmet>
@@ -16,8 +25,9 @@ export function QuestionPage() {
       <NavBar />
       <Wrapper>
         <Title>The Oracle Awaits</Title>
-        <P>Page not found.</P>
-        <Link to={process.env.PUBLIC_URL + '/'}>Return to Home Page</Link>
+        <Fire />
+        <P>Enter your question below and prepare to meditate.</P>
+        {/* <Input value={question} onChange={handleChange} text="textbox" placeholder="Write here..." /> */}
       </Wrapper>
     </>
   );
@@ -34,9 +44,9 @@ const Wrapper = styled.div`
 
 const Title = styled.div`
   margin-top: -8vh;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: ${p => p.theme.text};
-  font-size: 3.375rem;
+  font-size: 1.375rem;
 
   span {
     font-size: 3.125rem;

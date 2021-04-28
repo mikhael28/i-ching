@@ -15,6 +15,7 @@ import { GlobalStyle } from '../styles/global-styles';
 import { HomePage } from './pages/HomePage/Loadable';
 import { QuestionPage } from './pages/QuestionPage/index';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
+import { TaoPage } from './pages/TaoPage';
 import { useTranslation } from 'react-i18next';
 
 export function App() {
@@ -33,8 +34,13 @@ export function App() {
       </Helmet>
 
       <Switch>
-        <Route exact path={process.env.PUBLIC_URL + '/'} component={HomePage} />
-        <Route exact path={`/consult`} component={QuestionPage} />
+        <Route
+          exact
+          path={process.env.PUBLIC_URL + '/'}
+          component={QuestionPage}
+        />
+        <Route exact path={`/demo`} component={HomePage} />
+        <Route exact path={`/tao`} component={TaoPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
