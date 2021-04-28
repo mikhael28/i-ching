@@ -5,6 +5,7 @@ import { NavBar } from 'app/components/NavBar';
 import { Helmet } from 'react-helmet-async';
 import { StyleConstants } from 'styles/StyleConstants';
 import { hexagrams } from '../../../utils/hexagrams';
+import { LineCast } from 'utils/yarrow';
 
 export function JudgementPage(props) {
   const [question, setQuestion] = useState<string>('');
@@ -100,6 +101,7 @@ export function JudgementPage(props) {
         <div style={{ backgroundColor: 'white' }}>
           <img style={{ color: 'white' }} src={imageString} />
         </div>
+        <button onClick={LineCast}>Cast I-Ching</button>
       </Wrapper>
     </>
   );
