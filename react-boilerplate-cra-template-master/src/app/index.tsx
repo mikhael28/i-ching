@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet-async';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import { GlobalStyle } from '../styles/global-styles';
-
+import { JudgementPage } from './pages/JudgementPage/index';
 import { HomePage } from './pages/HomePage/Loadable';
 import { QuestionPage } from './pages/QuestionPage/index';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
@@ -43,6 +43,7 @@ export function App() {
         <Route exact path={`/demo`} component={HomePage} />
         <Route exact path={`/tao`} component={TaoPage} />
         <Route exact path={`/meditation`} component={TimerPage} />
+        <Route exact path={`/judgement`} component={JudgementPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
