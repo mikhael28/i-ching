@@ -111,6 +111,7 @@
     "redux-injectors": "1.3.0",
     "redux-saga": "1.1.3",
     "sanitize.css": "12.0.1",
+    "simplex-noise": "2.4.0",
     "styled-components": "5.1.0",
     "web-vitals": "0.2.4"
   },
