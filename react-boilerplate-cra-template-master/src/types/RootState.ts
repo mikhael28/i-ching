@@ -1,6 +1,5 @@
 import { GithubRepoFormState } from 'app/pages/HomePage/Features/GithubRepoForm/slice/types';
 import { ThemeState } from 'styles/theme/slice/types';
-import { QuestionState } from 'app/pages/QuestionPage/slice/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -12,6 +11,5 @@ import { QuestionState } from 'app/pages/QuestionPage/slice/types';
 export interface RootState {
   theme?: ThemeState;
   githubRepoForm?: GithubRepoFormState;
-  question?: QuestionState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }
