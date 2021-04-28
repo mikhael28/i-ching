@@ -5,7 +5,9 @@ import { getThemeFromStorage } from '../utils';
 import { ThemeKeyType, ThemeState } from './types';
 
 export const initialState: ThemeState = {
-  selected: getThemeFromStorage() || 'system',
+  // disabled the option to pick the theme, but keeping the functionality for the future.
+  // selected: getThemeFromStorage() || 'system',
+  selected: 'dark',
 };
 
 const slice = createSlice({
