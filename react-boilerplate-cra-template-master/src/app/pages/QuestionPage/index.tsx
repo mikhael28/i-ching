@@ -1,20 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
 import { P } from '../../components/P';
-// import { Input } from '../../components/Input';
+import { Input } from '../../components/Input/index';
 import { NavBar } from 'app/components/NavBar';
 import Fire from '../../components/Fire';
 import { Helmet } from 'react-helmet-async';
 import { StyleConstants } from 'styles/StyleConstants';
 
-export function QuestionPage() {
-  // const [question, setQuestion] = useState<string>('');
+export function QuestionPage(props) {
+  const [question, setQuestion] = useState<string>('');
 
-  // const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-  //   setQuestion(evt.currentTarget.value);
-  // }
+  const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    setQuestion(evt.currentTarget.value);
+  };
 
-  // console.log('Question state: ', question)
+  function validateForm() {
+    if (question.length > 8) {
+      return true;
+    }
+  }
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>,
+  ): Promise<void> => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      console.log('Submitting question: ', question);
+      localStorage.setItem('question', question);
+      props.history.push('/meditatation');
+    }
+  };
 
   return (
     <>
@@ -26,8 +42,19 @@ export function QuestionPage() {
       <Wrapper>
         <Title>The Oracle Awaits</Title>
         <Fire />
-        <P>Enter your question below and prepare to meditate.</P>
-        {/* <Input value={question} onChange={handleChange} text="textbox" placeholder="Write here..." /> */}
+        <form onSubmit={handleSubmit}>
+          <div style={{ width: '100%' }}>
+            <P>Enter your question below and prepare to meditate.</P>
+            <div style={{ marginRight: '10%', marginLeft: '10%' }}>
+              <Input
+                value={question}
+                onChange={handleChange}
+                type="text"
+                placeholder="Write here..."
+              />
+            </div>
+          </div>
+        </form>
       </Wrapper>
     </>
   );

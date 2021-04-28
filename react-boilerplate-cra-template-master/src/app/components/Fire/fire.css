@@ -55,7 +55,8 @@
 .fire {
   position: absolute;
   top: calc(25% - 50px);
-  left: calc(42% - 50px);
+  left: calc(30%);
+  right: calc(30%);
   width: 150px;
   height: 150px;
   background-color: transparent;
