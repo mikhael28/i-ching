@@ -13,7 +13,9 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from '../styles/global-styles';
 
 import { HomePage } from './pages/HomePage/Loadable';
+import { QuestionPage } from './pages/QuestionPage/index';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
+import { TaoPage } from './pages/TaoPage';
 import { useTranslation } from 'react-i18next';
 
 export function App() {
@@ -21,15 +23,24 @@ export function App() {
   return (
     <BrowserRouter>
       <Helmet
-        titleTemplate="%s - React Boilerplate"
-        defaultTitle="React Boilerplate"
+        titleTemplate="I-Ching TS "
+        defaultTitle="I-Ching TS"
         htmlAttributes={{ lang: i18n.language }}
       >
-        <meta name="description" content="A React Boilerplate application" />
+        <meta
+          name="description"
+          content="Consult the Oracle, drawing on the wisdom of 5000 years."
+        />
       </Helmet>
 
       <Switch>
-        <Route exact path={process.env.PUBLIC_URL + '/'} component={HomePage} />
+        <Route
+          exact
+          path={process.env.PUBLIC_URL + '/'}
+          component={QuestionPage}
+        />
+        <Route exact path={`/demo`} component={HomePage} />
+        <Route exact path={`/tao`} component={TaoPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
