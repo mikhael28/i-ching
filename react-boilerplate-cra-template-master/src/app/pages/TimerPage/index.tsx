@@ -2,12 +2,33 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
 import { P } from '../../components/P';
 import { NavBar } from 'app/components/NavBar';
-import Timer from '../../components/Timer';
 import { Helmet } from 'react-helmet-async';
 import { StyleConstants } from 'styles/StyleConstants';
+import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 
 export function TimerPage(props) {
   const [question, setQuestion] = useState<string>('');
+
+  const minuteSeconds = 60;
+  const hourSeconds = 3600;
+
+  const timerProps = {
+    isPlaying: true,
+    size: 120,
+    strokeWidth: 6,
+  };
+
+  const renderTime = (dimension, time) => {
+    return (
+      <div className="time-wrapper">
+        <div className="time">{time}</div>
+        <div>{dimension}</div>
+      </div>
+    );
+  };
+
+  const getTimeSeconds = time => (minuteSeconds - time) | 0;
+  const getTimeMinutes = time => ((time % hourSeconds) / minuteSeconds) | 0;
 
   useEffect(() => {
     let storedQuestion = localStorage.getItem('question');
@@ -16,6 +37,8 @@ export function TimerPage(props) {
       setQuestion(storedQuestion);
     }
   }, []);
+
+  const remainingTime = 7;
 
   return (
     <>
@@ -27,11 +50,53 @@ export function TimerPage(props) {
       <Wrapper>
         <Title>Reflect & Meditate</Title>
         <P>{question}</P>
-        <Timer />
+        <TimeWrapper>
+          <CountdownCircleTimer
+            {...timerProps}
+            colors="#6A359C"
+            duration={hourSeconds}
+            initialRemainingTime={remainingTime % hourSeconds}
+            onComplete={totalElapsedTime => {
+              console.log('finished');
+              return [remainingTime - totalElapsedTime > minuteSeconds, 8];
+            }}
+          >
+            {({ elapsedTime }) =>
+              elapsedTime !== undefined
+                ? renderTime(
+                    'minutes',
+                    getTimeMinutes(hourSeconds - elapsedTime),
+                  )
+                : null
+            }
+          </CountdownCircleTimer>
+          <CountdownCircleTimer
+            {...timerProps}
+            colors="#9969C7"
+            duration={minuteSeconds}
+            initialRemainingTime={remainingTime % minuteSeconds}
+            onComplete={totalElapsedTime => {
+              console.log('finished');
+              return [remainingTime - totalElapsedTime > minuteSeconds, 8];
+            }}
+          >
+            {({ elapsedTime }) =>
+              renderTime('seconds', getTimeSeconds(elapsedTime))
+            }
+          </CountdownCircleTimer>
+        </TimeWrapper>
       </Wrapper>
     </>
   );
 }
+const TimeWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  font-family: sans-serif;
+  text-align: center;
+  padding-top: 30px;
+  font-size: 22px;
+`;
 
 const Wrapper = styled.div`
   height: calc(100vh - ${StyleConstants.NAV_BAR_HEIGHT});
