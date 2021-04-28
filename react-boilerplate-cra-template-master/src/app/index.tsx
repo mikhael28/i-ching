@@ -15,6 +15,7 @@ import { GlobalStyle } from '../styles/global-styles';
 import { HomePage } from './pages/HomePage/Loadable';
 import { QuestionPage } from './pages/QuestionPage/index';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
+import { TimerPage } from './pages/TimerPage/index';
 import { TaoPage } from './pages/TaoPage';
 import { useTranslation } from 'react-i18next';
 
@@ -41,6 +42,7 @@ export function App() {
         />
         <Route exact path={`/demo`} component={HomePage} />
         <Route exact path={`/tao`} component={TaoPage} />
+        <Route exact path={`/meditation`} component={TimerPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />

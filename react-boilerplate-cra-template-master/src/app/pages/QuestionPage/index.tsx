@@ -10,6 +10,10 @@ import { StyleConstants } from 'styles/StyleConstants';
 export function QuestionPage(props) {
   const [question, setQuestion] = useState<string>('');
 
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
+
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     setQuestion(evt.currentTarget.value);
   };
@@ -28,7 +32,7 @@ export function QuestionPage(props) {
     if (validateForm()) {
       console.log('Submitting question: ', question);
       localStorage.setItem('question', question);
-      props.history.push('/meditatation');
+      props.history.push('/meditation');
     }
   };
 
