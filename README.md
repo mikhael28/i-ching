@@ -1,5 +1,5 @@
 
-The Oracle of Changes [is avaialable for consultation here.](https://oracleofchanges.com) 
+The Oracle of Changes [is available for consultation here.](https://oracleofchanges.com) 
 
 ## Features
 
