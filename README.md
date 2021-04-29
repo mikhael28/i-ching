@@ -1,6 +1,20 @@
 
 The Oracle of Changes [is avaialable for consultation here.](https://oracleofchanges.com) 
 
+## Features
+
+> Consultation according to the Yarrow stick method of divination.
+> Offline-first experience, I-Ching data stored in JSON whenever possible. 
+
+<dl>
+  <dt>Authenticity</dt>
+  <dd>You are required to ponder the question for at least 8 minutes & 8 seconds before divining the result.</dd>
+</dl>
+
+<sub><i>Keywords: I-Ching, Oracle, Book of Changes, Taoism, Confucianism, Lao Tzu, Tao, Dao</i></sub>
+
+---
+
 ## Install Locally (if you wish)
 
 ⚠️ Using [Yarn Package Manager](https://yarnpkg.com) is recommended over `npm`.
@@ -15,18 +29,6 @@ yarn start
 ```
 
 ---
-
-## Features
-
-> Consultation according to the Yarrow stick method of divination.
-> Offline-first experience, I-Ching data stored in JSON whenever possible. 
-
-<dl>
-  <dt>Authenticity</dt>
-  <dd>You are required to ponder the question for at least 8 minutes & 8 seconds before divining the result.</dd>
-</dl>
-
-<sub><i>Keywords: I-Ching, Oracle, Book of Changes, Taoism, Confucianism, Lao Tzu, Tao, Dao</i></sub>
 
 ## Contributors
 
