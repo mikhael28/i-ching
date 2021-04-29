@@ -39,7 +39,7 @@ export function TimerPage(props) {
       setQuestion(storedQuestion);
     }
   }, []);
-
+  // const remainingTime = 8;
   const remainingTime = 488;
 
   return (

@@ -12,6 +12,7 @@ export function JudgementPage(props) {
   const [question, setQuestion] = useState<string>('');
   const [imageString, setImageString] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
+  const [changingLines, setChangingLines] = useState<boolean>(false);
 
   const [judgement, setJudgement] = useState<Judgement>({
     number: 0,
@@ -103,7 +104,6 @@ export function JudgementPage(props) {
   };
 
   function organizeDivination() {
-    let changing = false;
     let castDivination: number[] = [];
     let changingDivination: number[] = [];
     for (let i = 0; i < 6; i++) {
@@ -117,19 +117,17 @@ export function JudgementPage(props) {
       } else if (line === 'o') {
         castDivination.push(1);
         changingDivination.push(0);
-        changing = true;
+        setChangingLines(true);
       } else if (line === 'x') {
         castDivination.push(0);
         changingDivination.push(1);
-        changing = true;
+        setChangingLines(true);
       }
     }
     let castString = castDivination.join('');
     let changeString = changingDivination.join('');
     let castHex;
     let changeHex;
-
-    // check whether the cast and change are diffrernt
 
     for (let i = 0; i < hexagrams.length; i++) {
       if (hexagrams[i].linesString === castString) {
@@ -161,7 +159,7 @@ export function JudgementPage(props) {
       {loading === true ? null : (
         <Wrapper>
           <Title>The Judgement</Title>
-          <div style={{ display: 'flex' }}>
+          <div>
             {judgement.names.map((name, idx) => (
               <P>
                 {idx + 1}. {name}
@@ -183,9 +181,37 @@ export function JudgementPage(props) {
             <P>{judgement.chineseName}</P>
             <P>{judgement.description}</P>
           </div>
+          {changingLines === true ? (
+            <Wrapper>
+              <hr />
+              <Title>Changing Lines Judgement</Title>
+              <div>
+                {changingJudgement.names.map((name, idx) => (
+                  <P>
+                    {idx + 1}. {name}
+                  </P>
+                ))}
+              </div>
+              <img
+                style={{
+                  color: 'white',
+                  backgroundColor: 'white',
+                  textAlign: 'center',
+                  marginTop: 20,
+                  height: 120,
+                  width: 120,
+                }}
+                src={imageString}
+              />
+              <div style={{ marginRight: '10%', marginLeft: '10%' }}>
+                <P>{changingJudgement.chineseName}</P>
+                <P>{changingJudgement.description}</P>
+              </div>
+            </Wrapper>
+          ) : null}
           <TextButton
             onClick={() => props.history.push('/')}
-            style={{ fontSize: 28 }}
+            style={{ fontSize: 28, marginTop: 20, marginBottom: 40 }}
           >
             Begin Anew
           </TextButton>
@@ -198,17 +224,11 @@ export function JudgementPage(props) {
 const Wrapper = styled.div`
   margin-top: 10px;
   display: flex;
-  height: calc(100vh - ${StyleConstants.NAV_BAR_HEIGHT});
-  /* justify-content: start; */
   align-items: center;
-  /* justify-content: center; */
   flex-direction: column;
-  /* min-height: 320px; */
 `;
 
 const Title = styled.div`
-  /* margin-top: -8vh; */
-  /* font-weight: bold; */
   color: ${p => p.theme.text};
   font-size: 1.375rem;
 
