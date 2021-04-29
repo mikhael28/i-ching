@@ -7,17 +7,16 @@ import { ReactComponent as GithubIcon } from './assets/github-icon.svg';
 export function Nav() {
   return (
     <Wrapper>
-      <Link to="/tao">
-        <Item>
-          <DocumentationIcon />
-          Tao te Ching
-        </Item>
-      </Link>
-
       <Link to="/">
         <Item>
           <DocumentationIcon />
           I-Ching
+        </Item>
+      </Link>
+      <Link to="/tao">
+        <Item>
+          <DocumentationIcon />
+          Tao te Ching
         </Item>
       </Link>
     </Wrapper>

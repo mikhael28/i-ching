@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
 import { P } from '../../components/P';
 import { NavBar } from 'app/components/NavBar';
+import { TextButton } from 'app/components/TextButton';
 import { Helmet } from 'react-helmet-async';
 import { StyleConstants } from 'styles/StyleConstants';
 import { hexagrams } from '../../../utils/hexagrams';
@@ -10,6 +11,7 @@ import { LineCast } from 'utils/yarrow';
 export function JudgementPage(props) {
   const [question, setQuestion] = useState<string>('');
   const [imageString, setImageString] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(true);
 
   const [judgement, setJudgement] = useState<Judgement>({
     number: 0,
@@ -21,16 +23,31 @@ export function JudgementPage(props) {
     bottomTrigram: 0,
     binary: 'string',
     lines: [1, 2],
+    linesString: '',
+    description: '',
+  });
+
+  const [changingJudgement, setChangingJudgement] = useState<Judgement>({
+    number: 0,
+    names: ['something'],
+    chineseName: 'string',
+    pinyinName: 'string',
+    character: 'string',
+    topTrigram: 0,
+    bottomTrigram: 0,
+    binary: 'string',
+    lines: [1, 2],
+    linesString: '',
+    description: '',
   });
 
   useEffect(() => {
-    runAlgorithm();
+    organizeDivination();
   }, []);
 
-  function runAlgorithm() {
-    setJudgement(hexagrams[3]);
-    const logo = require(`../../assets/${3}.png`);
-    console.log(logo);
+  function runAlgorithm(index) {
+    setJudgement(hexagrams[index]);
+    const logo = require(`../../assets/${index}.png`);
     setImageString(logo.default);
   }
 
@@ -59,6 +76,8 @@ export function JudgementPage(props) {
     bottomTrigram: number;
     binary: string;
     lines: number[];
+    description: string;
+    linesString: string;
   }
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
@@ -83,7 +102,54 @@ export function JudgementPage(props) {
     }
   };
 
-  console.log(judgement);
+  function organizeDivination() {
+    let changing = false;
+    let castDivination: number[] = [];
+    let changingDivination: number[] = [];
+    for (let i = 0; i < 6; i++) {
+      let line = LineCast();
+      if (line === '1') {
+        castDivination.push(1);
+        changingDivination.push(1);
+      } else if (line === '0') {
+        castDivination.push(0);
+        changingDivination.push(0);
+      } else if (line === 'o') {
+        castDivination.push(1);
+        changingDivination.push(0);
+        changing = true;
+      } else if (line === 'x') {
+        castDivination.push(0);
+        changingDivination.push(1);
+        changing = true;
+      }
+    }
+    let castString = castDivination.join('');
+    let changeString = changingDivination.join('');
+    let castHex;
+    let changeHex;
+
+    // check whether the cast and change are diffrernt
+
+    for (let i = 0; i < hexagrams.length; i++) {
+      if (hexagrams[i].linesString === castString) {
+        castHex = hexagrams[i];
+        setJudgement(hexagrams[i]);
+        break;
+      }
+    }
+
+    for (let m = 0; m < hexagrams.length; m++) {
+      if (hexagrams[m].linesString === changeString) {
+        changeHex = hexagrams[m];
+        setChangingJudgement(hexagrams[m]);
+      }
+    }
+    runAlgorithm(castHex.number);
+    setLoading(false);
+    console.log(castHex);
+    console.log(changeHex);
+  }
 
   return (
     <>
@@ -92,17 +158,39 @@ export function JudgementPage(props) {
         <meta name="description" content="Page not found" />
       </Helmet>
       <NavBar />
-      <Wrapper>
-        <Title>The Judgement</Title>
-        <p style={{ color: 'white' }}>{judgement.character}</p>
-        <div style={{ marginRight: '10%', marginLeft: '10%' }}>
-          <P>{judgement.chineseName}</P>
-        </div>
-        <div style={{ backgroundColor: 'white' }}>
-          <img style={{ color: 'white' }} src={imageString} />
-        </div>
-        <button onClick={LineCast}>Cast I-Ching</button>
-      </Wrapper>
+      {loading === true ? null : (
+        <Wrapper>
+          <Title>The Judgement</Title>
+          <div style={{ display: 'flex' }}>
+            {judgement.names.map((name, idx) => (
+              <P>
+                {idx + 1}. {name}
+              </P>
+            ))}
+          </div>
+          <img
+            style={{
+              color: 'white',
+              backgroundColor: 'white',
+              textAlign: 'center',
+              marginTop: 20,
+              height: 120,
+              width: 120,
+            }}
+            src={imageString}
+          />
+          <div style={{ marginRight: '10%', marginLeft: '10%' }}>
+            <P>{judgement.chineseName}</P>
+            <P>{judgement.description}</P>
+          </div>
+          <TextButton
+            onClick={() => props.history.push('/')}
+            style={{ fontSize: 28 }}
+          >
+            Begin Anew
+          </TextButton>
+        </Wrapper>
+      )}
     </>
   );
 }
