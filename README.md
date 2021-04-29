@@ -36,8 +36,7 @@ with a focus on
 
 ---
 
-The official [Create React App](https://github.com/facebook/create-react-app) template of the `discontinued` [React Boilerplate](https://github.com/react-boilerplate/react-boilerplate)
-![](https://img.shields.io/github/stars/react-boilerplate/react-boilerplate?style=flat)
+The Oracle of Changes [is avaialable for consultation.](https://oracleofchanges.com) 
 
 Start your `create-react-app` projects in seconds with the best, industry-standard tools and practices made ready for you.
 
@@ -56,72 +55,28 @@ Start your `create-react-app` projects in seconds with the best, industry-standa
 
 ⚠️ Using [Yarn Package Manager](https://yarnpkg.com) is recommended over `npm`.
 
-Create React App with the template
+Start and run the app, if you want
 
 ```shell
-npx create-react-app --template cra-template-rb my-app
-```
-
-Start and check our example app, if you want
-
-```shell
-cd my-app
+git clone <link>
+cd i-ching
+yarn install
 yarn start
-```
-
-Remove the example app to start your project!
-
-```shell
-yarn cleanAndSetup
 ```
 
 ---
 
 ## Features
 
-> This project is **NOT** a framework, UI component library or a design system. The only purpose of this template is to assist you starting your CRA app with a solid tool stack and development patterns. It's 100% customizable. After you start your journey and once you understand the concepts offered here you should personalize your code accordingly instead of being tied to the starter project.
->
-> You can add or remove literally anything and use whichever library or tools you prefer.
+> Consultation according to the Yarrow stick method of divination.
+> Offline-first experience, I-Ching data stored in JSON whenever possible. 
 
 <dl>
-
-  <dt>Predictable state management</dt>
-  <dd>Unidirectional data flow allows for change logging and time travel debugging.</dd>
-
-  <dt>Instant feedback</dt>
-  <dd>Enjoy the best DX (Developer eXperience) and code your app at the speed of thought! Your saved changes to the CSS and JS are reflected instantaneously without refreshing the page. Preserve application state even when you update something in the underlying code!</dd>
-
-  <dt>Next generation CSS</dt>
-  <dd>Write composable CSS that's co-located with your components for complete modularity. Unique generated class names keep the specificity low while eliminating style clashes. Ship only the styles that are on the page for the best performance.</dd>
-
-  <dt>Industry-standard routing</dt>
-  <dd>It's natural to want to add pages (e.g. `/about`) to your application, and routing makes this possible.</dd>
-
-  <dt>Industry-standard i18n internationalization support</dt>
-  <dd>Scalable apps need to support multiple languages, easily add and support multiple languages.</dd>
-
-  <dt>Typescript</dt>
-  <dd>Typescript is the key to scalability. Build self-documented code, easy-to-debug code and create maintainable large applications and codebases with a highly productive development experience.</dd>
-
-  <dt>Quick scaffolding</dt>
-  <dd>Create components, containers, routes, selectors and sagas - and their tests - right from the CLI!</dd>
-
-  <dt>Static code analysis</dt>
-  <dd>Focus on writing new features without worrying about formatting or code quality. With the right editor setup, your code will automatically be formatted and linted as you work.</dd>
-
-  <dt>SEO</dt>
-  <dd>We support SEO (document head tags management) for search engines that support indexing of JavaScript content. (eg. Google)</dd>
+  <dt>Authenticity</dt>
+  <dd>You are required to ponder the question for at least 8 minutes & 8 seconds before divining the result.</dd>
 </dl>
 
-But wait... there's more!
-
-- _The best test setup:_ Automatically guarantee code quality and non-breaking
-  changes. (Seen a react app with 100% test coverage before?)
-- _The fastest fonts:_ Say goodbye to vacant text.
-- _Stay fast_: Profile your app's performance from the comfort of your command
-  line!
-
-<sub><i>Keywords: Create React App, React Boilerplate, Custom Template, Typescript, React.js, Redux, Hot Reloading, ESNext, Babel, react-router, `styled-components`, redux-saga, FontFaceObserver</i></sub>
+<sub><i>Keywords: I-Ching, Oracle, Book of Changes, Taoism, Confucianism, Lao Tzu, Tao, Dao</i></sub>
 
 ## Contributors
 
@@ -130,9 +85,8 @@ But wait... there's more!
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/Can-Sahin"><img src="https://avatars2.githubusercontent.com/u/33245689?s=80" width="80px;" alt=""/><br /><sub><b>Can Sahin</b></sub></a><br /><a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/commits?author=Can-Sahin" title="Code">💻</a> <a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/commits?author=Can-Sahin" title="Documentation">📖</a> <a href="#ideas-Can-Sahin" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/pulls?q=is%3Apr+reviewed-by%3ACan-Sahin" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/commits?author=Can-Sahin" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://github.com/receptiryaki"><img src="https://avatars0.githubusercontent.com/u/3495307?s=80" width="80px;" alt=""/><br /><sub><b>Recep Tiryaki</b></sub></a><br /><a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/commits?author=receptiryaki" title="Code">💻</a> <a href="#ideas-receptiryaki" title="Ideas, Planning, & Feedback">🤔</a> <a href="#design-receptiryaki" title="Design">🎨</a></td>
-    <td align="center"><a href="https://github.com/mogsdad"><img src="https://avatars3.githubusercontent.com/u/1707731?s=80" width="80px;" alt=""/><br /><sub><b>David Bingham</b></sub></a><br /><a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/commits?author=mogsdad" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/mikhael28"><img src="https://avatars2.githubusercontent.com/u/33245689?s=80" width="80px;" alt=""/><br /><sub><b>Can Sahin</b></sub></a><br /><a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/commits?author=Can-Sahin" title="Code">💻</a> <a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/commits?author=Can-Sahin" title="Documentation">📖</a> <a href="#ideas-Can-Sahin" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/pulls?q=is%3Apr+reviewed-by%3ACan-Sahin" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/commits?author=Can-Sahin" title="Tests">⚠️</a></td>
+   
   </tr>
 </table>
 
