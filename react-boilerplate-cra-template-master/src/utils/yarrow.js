@@ -31,9 +31,7 @@ export const LineCast = function () {
   //This function creates the pictures of lines as broken or unbroken
   //and changing or unchanging
   try {
-    console.log('yo');
     Stalks = 49; //Remove one stalk and set it aside
-    console.log('Stalks value: ', Stalks);
 
     DivideStalks(Stalks);
     // Divide 49 Yarrow stalks into two piles at random: East and West
@@ -96,28 +94,33 @@ export const LineCast = function () {
     // If 8 Line = yielding
     // if 9 Line = strong but Changing
     // if 6 Line = yielding but Changing
-    if (LineValue === 6) DrawLine('weak', true);
-    if (LineValue === 7) DrawLine('strong', false);
-    if (LineValue === 8) DrawLine('weak', false);
-    if (LineValue === 9) DrawLine('strong', true);
+    if (LineValue === 6) return DrawLine('weak', true);
+    if (LineValue === 7) return DrawLine('strong', false);
+    if (LineValue === 8) return DrawLine('weak', false);
+    if (LineValue === 9) return DrawLine('strong', true);
   } catch (e) {
     console.log(e);
   }
 }; // End LineCast Function
 
+// notes from ashley: I came up with a plan to have 1 represent an unbroken and unchanging line, 0 to represent a broken and unchanging line, x to represent an unbroken line changing to broken (strong to weak), and o to represent a broken line changing to unbroken (weak to strong).
+
 let DrawLine = function (line, changing) {
-  console.log('Can I live?');
   if (changing && line === 'weak') {
     asciipic = '====&nbsp;o&nbsp;===';
+    return 'o';
   }
   if (changing && line === 'strong') {
     asciipic = '====x====';
+    return 'x';
   }
   if (!changing && line === 'strong') {
     asciipic = '=========';
+    return '1';
   }
   if (!changing && line === 'weak') {
     asciipic = '===&nbsp;&nbsp;&nbsp;===';
+    return '0';
   }
-  console.log(asciipic);
+  return asciipic;
 };
