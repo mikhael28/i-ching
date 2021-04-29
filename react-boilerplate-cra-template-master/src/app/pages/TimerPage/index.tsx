@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
 import { P } from '../../components/P';
 import { NavBar } from 'app/components/NavBar';
+import { TextButton } from 'app/components/TextButton';
 import { Helmet } from 'react-helmet-async';
 import { StyleConstants } from 'styles/StyleConstants';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 
 export function TimerPage(props) {
   const [question, setQuestion] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
 
   const minuteSeconds = 60;
   const hourSeconds = 3600;
@@ -38,7 +40,7 @@ export function TimerPage(props) {
     }
   }, []);
 
-  const remainingTime = 7;
+  const remainingTime = 488;
 
   return (
     <>
@@ -77,6 +79,7 @@ export function TimerPage(props) {
             initialRemainingTime={remainingTime % minuteSeconds}
             onComplete={totalElapsedTime => {
               console.log('finished');
+              setLoading(true);
               return [remainingTime - totalElapsedTime > minuteSeconds, 8];
             }}
           >
@@ -85,6 +88,14 @@ export function TimerPage(props) {
             }
           </CountdownCircleTimer>
         </TimeWrapper>
+        {loading === true ? (
+          <TextButton
+            onClick={() => props.history.push('/consulting')}
+            style={{ marginTop: 30, fontSize: 32 }}
+          >
+            Begin Consultation
+          </TextButton>
+        ) : null}
       </Wrapper>
     </>
   );
