@@ -17,6 +17,7 @@ import { QuestionPage } from './pages/QuestionPage/index';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 import { TimerPage } from './pages/TimerPage/index';
 import { TaoPage } from './pages/TaoPage';
+import { LoadingPage } from './pages/LoadingPage';
 import { useTranslation } from 'react-i18next';
 
 export function App() {
@@ -43,6 +44,7 @@ export function App() {
         <Route exact path={`/demo`} component={HomePage} />
         <Route exact path={`/tao`} component={TaoPage} />
         <Route exact path={`/meditation`} component={TimerPage} />
+        <Route exact path={`/consulting`} component={LoadingPage} />
         <Route exact path={`/judgement`} component={JudgementPage} />
         <Route component={NotFoundPage} />
       </Switch>
