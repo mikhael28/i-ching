@@ -2,7 +2,7 @@ const fs = require('fs');
 const requireText = require('require-text');
 let arrayOfCommentary = [];
 function txt2Json(id) {
-  let index = requireText(`../app/judgements/${id}.txt`, require);
+  let index = requireText(`./${id}.txt`, require);
   // Prints contents of ./index.html file, which resides
   // in the same directory as this source code file.
 
@@ -94,11 +94,11 @@ function txt2Json(id) {
 }
 
 async function ls(path) {
-  const dir = await fs.promises.opendir(path);
-  for await (const dirent of dir) {
-    let splitDirectoryName = dirent.name.split('.');
-    txt2Json(splitDirectoryName[0]);
-  }
+  //   const dir = await fs.promises.opendir(path);
+  //   for await (const dirent of dir) {
+  //     let splitDirectoryName = dirent.name.split('.');
+  //   }
+  txt2Json('1');
   fs.writeFile('commentary.json', JSON.stringify(arrayOfCommentary), err => {
     if (err) {
       throw err;
