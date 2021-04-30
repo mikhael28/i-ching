@@ -1,10 +1,9 @@
-
-The Oracle of Changes [is available for consultation here.](https://oracleofchanges.com) 
+The Oracle of Changes [is available for consultation here.](https://oracleofchanges.com)
 
 ## Features
 
 > Consultation according to the Yarrow stick method of divination.
-> Offline-first experience, I-Ching data stored in JSON whenever possible. 
+> Offline-first experience, I-Ching data stored in JSON whenever possible.
 
 <dl>
   <dt>Authenticity</dt>
@@ -37,7 +36,7 @@ yarn start
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/mikhael28"><img src="https://avatars.githubusercontent.com/u/15205259?s=400&u=64ad9374b8d98f09dc5709fcc737e5ec4f2447f3&v=4" width="80px;" alt=""/><br /><sub><b>Misha</b></sub></a><br /><a href="https://github.com/react-boilerplate/react-boilerplate-cra-template/commits?author=Can-Sahin" title="Code"></td>
+    <td align="center"><a href="https://github.com/mikhael28"><img src="https://avatars.githubusercontent.com/u/15205259?s=400&u=64ad9374b8d98f09dc5709fcc737e5ec4f2447f3&v=4" width="80px;" alt=""/><br /><sub><b>Misha</b></sub></a><br /></td>
    
   </tr>
 </table>

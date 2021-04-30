@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
 import { NavBar } from 'app/components/NavBar';
 import { Helmet } from 'react-helmet-async';
-import { tao } from '../../../utils/tao.js';
+import { tao } from '../../../utils/tao';
 
 export function TaoPage() {
   const [activePassage, setActive] = useState({
