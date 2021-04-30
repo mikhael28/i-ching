@@ -43,7 +43,7 @@ export function TimerPage(props) {
     }
   }, []);
   // const remainingTime = 8;
-  const remainingTime = 8;
+  const remainingTime = 488;
 
   return (
     <>
@@ -54,6 +54,7 @@ export function TimerPage(props) {
       <NavBar />
       <Wrapper>
         <Title>Reflect & Meditate</Title>
+        <P>8 minutes, 8 seconds</P>
         <P>{question}</P>
         <TimeWrapper>
           <CountdownCircleTimer
