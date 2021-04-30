@@ -25,9 +25,7 @@ export function TimerPage(props) {
     return (
       <div className="time-wrapper">
         <div className="time">{minutesState} min</div>
-        <div>
-          {time} {dimension}
-        </div>
+        <div>{time} secs</div>
       </div>
     );
   };
