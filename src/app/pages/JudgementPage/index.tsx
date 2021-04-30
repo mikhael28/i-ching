@@ -53,7 +53,7 @@ export function JudgementPage(props) {
 
   function runAlgorithm(index) {
     setJudgement(hexagrams[index]);
-    const logo = require(`../../assets/${index}.png`);
+    const logo = require(`../../../utils/assets/${index}.png`);
     setImageString(logo.default);
     setLoading(false);
   }

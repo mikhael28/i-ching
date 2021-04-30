@@ -1,10 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components/macro';
-import { P } from '../../components/P';
-import { Link } from 'app/components/Link';
 import { NavBar } from 'app/components/NavBar';
 import { Helmet } from 'react-helmet-async';
-import { StyleConstants } from 'styles/StyleConstants';
 import { hexagrams } from '../../../utils/hexagrams';
 import './styles.css';
 
@@ -20,7 +17,7 @@ export function HexagramsPage(props) {
         <Title>Tap to read</Title>
         <div className="exp-cards">
           {hexagrams.map((hex, idx) => {
-            const img = require(`../../assets/${hex.number}.png`);
+            const img = require(`../../../utils/assets/${hex.number}.png`);
             return (
               <div
                 className="exp-card"
