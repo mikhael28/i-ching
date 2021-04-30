@@ -78,9 +78,10 @@ export function TimerPage(props) {
             duration={minuteSeconds}
             initialRemainingTime={remainingTime % minuteSeconds}
             onComplete={totalElapsedTime => {
-              console.log('finished');
-              setLoading(true);
-              return [remainingTime - totalElapsedTime > minuteSeconds, 8];
+              if (remainingTime - totalElapsedTime === 0) {
+                setLoading(true);
+              }
+              return [remainingTime - totalElapsedTime >= minuteSeconds, 8];
             }}
           >
             {({ elapsedTime }) =>
@@ -106,6 +107,7 @@ const TimeWrapper = styled.div`
   font-family: sans-serif;
   text-align: center;
   padding-top: 30px;
+  margin: 10px;
   font-size: 22px;
 `;
 

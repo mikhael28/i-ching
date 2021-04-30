@@ -11,6 +11,7 @@ import { LineCast } from 'utils/yarrow';
 export function JudgementPage(props) {
   const [question, setQuestion] = useState<string>('');
   const [imageString, setImageString] = useState<string>('');
+  const [commentaryString, setCommentaryString] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
   const [changingLines, setChangingLines] = useState<boolean>(false);
 
@@ -75,12 +76,11 @@ export function JudgementPage(props) {
     console.log(index);
     setJudgement(hexagrams[index]);
     for (let i = 0; i < commentaryLibrary.length; i++) {
-      console.log(commentaryLibrary);
       if (commentaryLibrary[i].num === index) {
         setCommentary(commentaryLibrary[i]);
       }
     }
-    const logo = require(`../../../utils/assets/${index}.png`);
+    let logo = require(`../../../utils/assets/${index}.png`);
     setImageString(logo.default);
     setLoading(false);
   }
@@ -176,6 +176,8 @@ export function JudgementPage(props) {
       if (hexagrams[i].linesString === castString) {
         castHex = hexagrams[i];
         setJudgement(hexagrams[i]);
+        let logo = require(`../../../utils/assets/${hexagrams[i].number}.png`);
+        setImageString(logo.default);
         break;
       }
     }
@@ -184,9 +186,10 @@ export function JudgementPage(props) {
       if (hexagrams[m].linesString === changeString) {
         changeHex = hexagrams[m];
         setChangingJudgement(hexagrams[m]);
+        let changingLogo = require(`../../../utils/assets/${hexagrams[m].number}.png`);
+        setCommentaryString(changingLogo.default);
       }
     }
-    runAlgorithm(castHex.number);
     setLoading(false);
   }
 
@@ -200,11 +203,10 @@ export function JudgementPage(props) {
       {loading === true ? null : (
         <Wrapper>
           <Title>The Judgement</Title>
+          <Title>{judgement.number}</Title>
           <div>
             {judgement.names.map((name, idx) => (
-              <P>
-                {idx + 1}. {name}
-              </P>
+              <P>{name}</P>
             ))}
           </div>
           <img
@@ -226,11 +228,10 @@ export function JudgementPage(props) {
             <Wrapper>
               <hr />
               <Title>Changing Lines Judgement</Title>
+              <Title>{changingJudgement.number}</Title>
               <div>
                 {changingJudgement.names.map((name, idx) => (
-                  <P>
-                    {idx + 1}. {name}
-                  </P>
+                  <P>{name}</P>
                 ))}
               </div>
               <img
@@ -242,7 +243,7 @@ export function JudgementPage(props) {
                   height: 120,
                   width: 120,
                 }}
-                src={imageString}
+                src={commentaryString}
               />
               <div style={{ marginRight: '10%', marginLeft: '10%' }}>
                 <P>{changingJudgement.chineseName}</P>
