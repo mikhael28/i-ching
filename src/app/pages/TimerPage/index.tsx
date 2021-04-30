@@ -59,7 +59,6 @@ export function TimerPage(props) {
             duration={hourSeconds}
             initialRemainingTime={remainingTime % hourSeconds}
             onComplete={totalElapsedTime => {
-              console.log('finished');
               return [remainingTime - totalElapsedTime > minuteSeconds, 8];
             }}
           >
@@ -78,6 +77,10 @@ export function TimerPage(props) {
             duration={minuteSeconds}
             initialRemainingTime={remainingTime % minuteSeconds}
             onComplete={totalElapsedTime => {
+              console.log('Remaining time: ', remainingTime);
+              console.log('Total elapsed time', totalElapsedTime);
+              console.log(remainingTime - totalElapsedTime);
+              console.log(remainingTime - totalElapsedTime === 0);
               if (remainingTime - totalElapsedTime === 0) {
                 setLoading(true);
               }
