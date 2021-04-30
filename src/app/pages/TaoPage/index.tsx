@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
-import { P } from '../../components/P';
-import { Link } from 'app/components/Link';
-import { TextButton } from 'app/components/TextButton';
 import { NavBar } from 'app/components/NavBar';
 import { Helmet } from 'react-helmet-async';
-import { StyleConstants } from 'styles/StyleConstants';
 import { tao } from '../../../utils/tao.js';
+
 export function TaoPage() {
   const [activePassage, setActive] = useState({
     chapterNum: '',
@@ -35,6 +32,7 @@ export function TaoPage() {
     if (verse + 1 !== tao.length) {
       setActive(tao[verse + 1].passage);
       setVerse(verse + 1);
+      window.scrollTo(0, 0);
     }
   }
 
@@ -42,10 +40,11 @@ export function TaoPage() {
     if (verse !== 0) {
       setActive(tao[verse - 1].passage);
       setVerse(verse - 1);
+      window.scrollTo(0, 0);
     }
   }
   return (
-    <React.Fragment>
+    <div style={{ marginBottom: -30 }}>
       <Helmet>
         <title>The Tao Te Ching</title>
         <meta name="description" content="The Tao Te Ching" />
@@ -55,24 +54,27 @@ export function TaoPage() {
         {/* @TODO: styling needs major work */}
         <Title>Tao Te Ching</Title>
         {passages.map(poem => {
-          return <P>{poem}</P>;
+          return <Tao>{poem}</Tao>;
         })}
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <TextButton onClick={previousChapter}>Previous Chapter</TextButton>
-          <TextButton onClick={nextChapter}>Next Chapter</TextButton>
-        </div>
       </Wrapper>
-    </React.Fragment>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+        }}
+      >
+        <TaoButton onClick={previousChapter}>Previous Chapter</TaoButton>
+        <TaoButton onClick={nextChapter}>Next Chapter</TaoButton>
+      </div>
+    </div>
   );
 }
 
 const Wrapper = styled.div`
-  /* height: calc(100vh - ${StyleConstants.NAV_BAR_HEIGHT}); */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  min-height: 320px;
   margin-top: 80px;
 `;
 
@@ -84,5 +86,32 @@ const Title = styled.div`
 
   span {
     font-size: 3.125rem;
+  }
+`;
+
+const Tao = styled.p`
+  font-size: 1.25rem;
+  /* line-height: 1.5; */
+  color: ${p => p.theme.textSecondary};
+  margin: 0.25rem 6px 0.25rem 6px;
+  text-align: center;
+`;
+
+const TaoButton = styled.button`
+  background: none;
+  outline: none;
+  padding: 0;
+  margin-bottom: 0;
+  border: none;
+  color: ${p => p.theme.primary};
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+
+  &:active {
+    opacity: 0.4;
   }
 `;

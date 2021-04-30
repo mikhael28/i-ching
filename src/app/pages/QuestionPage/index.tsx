@@ -58,7 +58,7 @@ export function QuestionPage(props) {
         <Fire />
         <form onSubmit={handleSubmit}>
           <div style={{ width: '100%' }}>
-            <P>Enter your question below and prepare to meditate.</P>
+            <P>Enter your question below, reflect & meditate</P>
             <div
               style={{ marginRight: '10%', marginLeft: '10%', display: 'flex' }}
             >
