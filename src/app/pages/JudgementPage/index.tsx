@@ -43,13 +43,19 @@ export function JudgementPage(props) {
   });
 
   useEffect(() => {
-    organizeDivination();
+    let splitPath = window.location.pathname.split('/');
+    if (splitPath.length === 2) {
+      organizeDivination();
+    } else if (splitPath.length === 3) {
+      runAlgorithm(parseInt(splitPath[2]));
+    }
   }, []);
 
   function runAlgorithm(index) {
     setJudgement(hexagrams[index]);
     const logo = require(`../../assets/${index}.png`);
     setImageString(logo.default);
+    setLoading(false);
   }
 
   interface Trigram {
@@ -145,8 +151,6 @@ export function JudgementPage(props) {
     }
     runAlgorithm(castHex.number);
     setLoading(false);
-    console.log(castHex);
-    console.log(changeHex);
   }
 
   return (

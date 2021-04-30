@@ -10,13 +10,19 @@ export function Nav() {
       <Link to="/">
         <Item>
           <DocumentationIcon />
-          I-Ching
+          Ask
+        </Item>
+      </Link>
+      <Link to="/hexagrams">
+        <Item>
+          <DocumentationIcon />
+          Yi Jing
         </Item>
       </Link>
       <Link to="/tao">
         <Item>
           <DocumentationIcon />
-          Tao te Ching
+          Tao
         </Item>
       </Link>
     </Wrapper>
