@@ -68,6 +68,8 @@ export function JudgementPage(props) {
     if (splitPath.length === 2) {
       organizeDivination();
     } else {
+      console.log(splitPath[2].length);
+      console.log(splitPath);
       if (splitPath[2].length === 0) {
         organizeDivination();
       } else {
