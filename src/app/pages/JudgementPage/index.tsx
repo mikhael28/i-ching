@@ -79,7 +79,10 @@ export function JudgementPage(props) {
   }, []);
 
   function runAlgorithm(index) {
-    setJudgement(hexagrams[index]);
+    console.log(index);
+    console.log(hexagrams[index]);
+    // this code below is ridiculous, need to normalize JSON
+    setJudgement(hexagrams[index - 1]);
     for (let i = 0; i < commentaryLibrary.length; i++) {
       if (commentaryLibrary[i].num === index) {
         setCommentary(commentaryLibrary[i]);
@@ -180,6 +183,7 @@ export function JudgementPage(props) {
     for (let i = 0; i < hexagrams.length; i++) {
       if (hexagrams[i].linesString === castString) {
         castHex = hexagrams[i];
+        console.log('hex: ', castHex);
         setJudgement(hexagrams[i]);
         let logo = require(`../../../utils/assets/${hexagrams[i].number}.png`);
         setImageString(logo.default);

@@ -17,7 +17,7 @@ export function HexagramsPage(props) {
         <Title>Tap to read</Title>
         <div className="exp-cards">
           {hexagrams.map((hex, idx) => {
-            const img = require(`../../../utils/assets/${hex.number - 1}.png`);
+            const img = require(`../../../utils/assets/${hex.number}.png`);
             return (
               <div
                 className="exp-card"
