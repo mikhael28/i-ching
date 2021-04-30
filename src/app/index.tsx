@@ -16,7 +16,7 @@ import { HomePage } from './pages/HomePage/Loadable';
 import { QuestionPage } from './pages/QuestionPage/index';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 import { TimerPage } from './pages/TimerPage/index';
-import { TaoPage } from './pages/TaoPage';
+import { TaoPage } from './pages/TaoPage/Loadable';
 import { LoadingPage } from './pages/LoadingPage';
 import { useTranslation } from 'react-i18next';
 import { HexagramsPage } from './pages/HexagramsPage/Loadable';

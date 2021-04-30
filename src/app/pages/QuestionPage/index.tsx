@@ -6,9 +6,12 @@ import { NavBar } from 'app/components/NavBar';
 import Fire from '../../components/Fire';
 import { Helmet } from 'react-helmet-async';
 import { StyleConstants } from 'styles/StyleConstants';
+import { AiOutlineEnter } from 'react-icons/ai';
+import './styles.css';
 
 export function QuestionPage(props) {
   const [question, setQuestion] = useState<string>('');
+  const [disabled, setDisabled] = useState<boolean>(true);
 
   useEffect(() => {
     localStorage.clear();
@@ -16,11 +19,18 @@ export function QuestionPage(props) {
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     setQuestion(evt.currentTarget.value);
+    if (question.length > 7) {
+      setDisabled(false);
+    } else if (question.length <= 7) {
+      setDisabled(true);
+    }
   };
 
   function validateForm() {
     if (question.length > 8) {
       return true;
+    } else {
+      return false;
     }
   }
 
@@ -49,13 +59,18 @@ export function QuestionPage(props) {
         <form onSubmit={handleSubmit}>
           <div style={{ width: '100%' }}>
             <P>Enter your question below and prepare to meditate.</P>
-            <div style={{ marginRight: '10%', marginLeft: '10%' }}>
+            <div
+              style={{ marginRight: '10%', marginLeft: '10%', display: 'flex' }}
+            >
               <Input
                 value={question}
                 onChange={handleChange}
                 type="text"
                 placeholder="Write here..."
               />
+              <button disabled={disabled}>
+                <AiOutlineEnter />
+              </button>
             </div>
           </div>
         </form>
