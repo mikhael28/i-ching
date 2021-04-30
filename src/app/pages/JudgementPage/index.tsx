@@ -66,12 +66,12 @@ export function JudgementPage(props) {
   useEffect(() => {
     let splitPath = window.location.pathname.split('/');
     if (splitPath.length === 2) {
-      organizeDivination();
+      organizeDivination(hexagrams);
     } else {
       console.log(splitPath[2].length);
       console.log(splitPath);
       if (splitPath[2].length === 0) {
-        organizeDivination();
+        organizeDivination(hexagrams);
       } else {
         runAlgorithm(parseInt(splitPath[2]));
       }
@@ -151,7 +151,7 @@ export function JudgementPage(props) {
     }
   };
 
-  function organizeDivination() {
+  function organizeDivination(hexagrams) {
     let castDivination: number[] = [];
     let changingDivination: number[] = [];
     for (let i = 0; i < 6; i++) {
