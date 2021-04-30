@@ -10,6 +10,7 @@ import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 export function TimerPage(props) {
   const [question, setQuestion] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
+  const [minutesState, setMinutesState] = useState<number>(8);
 
   const minuteSeconds = 60;
   const hourSeconds = 3600;
@@ -23,8 +24,10 @@ export function TimerPage(props) {
   const renderTime = (dimension, time) => {
     return (
       <div className="time-wrapper">
-        <div className="time">{time}</div>
-        <div>{dimension}</div>
+        <div className="time">{minutesState} min</div>
+        <div>
+          {time} {dimension}
+        </div>
       </div>
     );
   };
@@ -40,7 +43,7 @@ export function TimerPage(props) {
     }
   }, []);
   // const remainingTime = 8;
-  const remainingTime = 488;
+  const remainingTime = 8;
 
   return (
     <>
@@ -55,34 +58,18 @@ export function TimerPage(props) {
         <TimeWrapper>
           <CountdownCircleTimer
             {...timerProps}
-            colors="#6A359C"
-            duration={hourSeconds}
-            initialRemainingTime={remainingTime % hourSeconds}
-            onComplete={totalElapsedTime => {
-              return [remainingTime - totalElapsedTime > minuteSeconds, 8];
-            }}
-          >
-            {({ elapsedTime }) =>
-              elapsedTime !== undefined
-                ? renderTime(
-                    'minutes',
-                    getTimeMinutes(hourSeconds - elapsedTime),
-                  )
-                : null
-            }
-          </CountdownCircleTimer>
-          <CountdownCircleTimer
-            {...timerProps}
             colors="#9969C7"
             duration={minuteSeconds}
             initialRemainingTime={remainingTime % minuteSeconds}
             onComplete={totalElapsedTime => {
+              setMinutesState(minutesState - 1);
               console.log('Remaining time: ', remainingTime);
               console.log('Total elapsed time', totalElapsedTime);
               console.log(remainingTime - totalElapsedTime);
               console.log(remainingTime - totalElapsedTime === 0);
               if (remainingTime - totalElapsedTime === 0) {
                 setLoading(true);
+                props.history.push('/consulting');
               }
               return [remainingTime - totalElapsedTime >= minuteSeconds, 8];
             }}
