@@ -1,27 +1,28 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro';
-import { ReactComponent as DocumentationIcon } from './assets/documentation-icon.svg';
-import { ReactComponent as GithubIcon } from './assets/github-icon.svg';
+import { FaPrayingHands } from 'react-icons/fa';
+import { GiYinYang } from 'react-icons/gi';
+import { GiMagnifyingGlass } from 'react-icons/gi';
 
 export function Nav() {
   return (
     <Wrapper>
       <Link to="/">
         <Item>
-          <DocumentationIcon />
+          <FaPrayingHands style={{ marginRight: 8 }} />
           Ask
         </Item>
       </Link>
       <Link to="/hexagrams">
         <Item>
-          <DocumentationIcon />
+          <GiMagnifyingGlass style={{ marginRight: 8 }} />
           Yi Jing
         </Item>
       </Link>
       <Link to="/tao">
         <Item>
-          <DocumentationIcon />
+          <GiYinYang style={{ marginRight: 8 }} />
           Tao
         </Item>
       </Link>
