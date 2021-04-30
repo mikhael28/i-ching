@@ -17,7 +17,7 @@ export function Nav() {
       <Link to="/hexagrams">
         <Item>
           <GiMagnifyingGlass style={{ marginRight: 8 }} />
-          Yi Jing
+          I-Ching
         </Item>
       </Link>
       <Link to="/tao">
