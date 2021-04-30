@@ -4,7 +4,7 @@ import { P } from '../../components/P';
 import { NavBar } from 'app/components/NavBar';
 import { TextButton } from 'app/components/TextButton';
 import { Helmet } from 'react-helmet-async';
-import { StyleConstants } from 'styles/StyleConstants';
+import { commentaryLibrary } from '../../../utils/commentary';
 import { hexagrams } from '../../../utils/hexagrams';
 import { LineCast } from 'utils/yarrow';
 
@@ -42,14 +42,47 @@ export function JudgementPage(props) {
     description: '',
   });
 
+  const [commentary, setCommentary] = useState<Commentary>({
+    num: 0,
+    title: '',
+    heaven: '',
+    summary: '',
+    judgement: [],
+    image: [],
+    lines: [],
+  });
+
+  const [changingCommentary, setChangingCommentary] = useState<Commentary>({
+    num: 0,
+    title: '',
+    heaven: '',
+    summary: '',
+    judgement: [],
+    image: [],
+    lines: [],
+  });
+
   useEffect(() => {
-    organizeDivination();
+    let splitPath = window.location.pathname.split('/');
+    if (splitPath.length === 2) {
+      organizeDivination();
+    } else if (splitPath.length === 3) {
+      runAlgorithm(parseInt(splitPath[2]));
+    }
   }, []);
 
   function runAlgorithm(index) {
+    console.log(index);
     setJudgement(hexagrams[index]);
-    const logo = require(`../../assets/${index}.png`);
+    for (let i = 0; i < commentaryLibrary.length; i++) {
+      console.log(commentaryLibrary);
+      if (commentaryLibrary[i].num === index) {
+        setCommentary(commentaryLibrary[i]);
+      }
+    }
+    const logo = require(`../../../utils/assets/${index}.png`);
     setImageString(logo.default);
+    setLoading(false);
   }
 
   interface Trigram {
@@ -79,6 +112,16 @@ export function JudgementPage(props) {
     lines: number[];
     description: string;
     linesString: string;
+  }
+
+  interface Commentary {
+    num: number;
+    title: string;
+    heaven: string;
+    summary: string;
+    judgement: string[];
+    image: string[];
+    lines: string[];
   }
 
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
@@ -145,8 +188,6 @@ export function JudgementPage(props) {
     }
     runAlgorithm(castHex.number);
     setLoading(false);
-    console.log(castHex);
-    console.log(changeHex);
   }
 
   return (
@@ -215,6 +256,12 @@ export function JudgementPage(props) {
           >
             Begin Anew
           </TextButton>
+          <div>
+            <P>{commentary.summary}</P>
+            {commentary.lines.map(line => {
+              return <P>{line}</P>;
+            })}
+          </div>
         </Wrapper>
       )}
     </>

@@ -19,6 +19,7 @@ import { TimerPage } from './pages/TimerPage/index';
 import { TaoPage } from './pages/TaoPage';
 import { LoadingPage } from './pages/LoadingPage';
 import { useTranslation } from 'react-i18next';
+import { HexagramsPage } from './pages/HexagramsPage/Loadable';
 
 export function App() {
   const { i18n } = useTranslation();
@@ -45,7 +46,9 @@ export function App() {
         <Route exact path={`/tao`} component={TaoPage} />
         <Route exact path={`/meditation`} component={TimerPage} />
         <Route exact path={`/consulting`} component={LoadingPage} />
-        <Route exact path={`/judgement`} component={JudgementPage} />
+        <Route path={`/judgement`} component={JudgementPage} />
+        <Route path={`/judgement/:id`} component={JudgementPage} />
+        <Route exact path={`/hexagrams`} component={HexagramsPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
