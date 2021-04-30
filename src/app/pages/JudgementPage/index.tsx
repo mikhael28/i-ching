@@ -67,13 +67,16 @@ export function JudgementPage(props) {
     let splitPath = window.location.pathname.split('/');
     if (splitPath.length === 2) {
       organizeDivination();
-    } else if (splitPath.length === 3) {
-      runAlgorithm(parseInt(splitPath[2]));
+    } else {
+      if (splitPath[2].length === 0) {
+        organizeDivination();
+      } else {
+        runAlgorithm(parseInt(splitPath[2]));
+      }
     }
   }, []);
 
   function runAlgorithm(index) {
-    console.log(index);
     setJudgement(hexagrams[index]);
     for (let i = 0; i < commentaryLibrary.length; i++) {
       if (commentaryLibrary[i].num === index) {
