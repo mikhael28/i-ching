@@ -1,4 +1,4 @@
-let commentary = [
+export const commentaryLibrary = [
   {
     num: 29,
     title: "29. K'an / The Abysmal (Water)",
@@ -39,32 +39,8 @@ let commentary = [
     image: [
       'Within the earth, a mountain:\rThe image of MODESTY.\rThus the superior man reduces that which is too much,\rAnd augments that which is too little.\rHe weighs things and makes them equal.',
       'The wealth of the earth in which a mountain is hidden is not visible to the eye, because the depths are offset by the height of the mountain. Thus high and low competent each other and the result is the plain. Here an effect that it took a long time to achieve, but that in the end seems easy of accomplishment and self-evident, is used as the image of modesty. The superior man does the same thing when he establishes order in the world; he equalizes the extremes that are the source of social discontent and thereby creates just and equable conditions.',
-      '\rTHE LINES',
-      'Six at the beginning means:\rA superior man modest about his modesty\rMay cross the great water.\rGood fortune.',
-      'A dangerous enterprise, such as the crossing of a great stream, is made much more difficult if many claims and considerations have to be taken into account. On the other hand, the task is easy if it is attended to quickly and simply. Therefore the unassuming attitude of mind that goes with modesty fits a man to accomplish even difficult undertakings: he imposes no demands or stipulations but settles matters easily and quickly. Where no claims are put forward, no resistances arise.',
-      'Six in the second place means:\rModesty that comes to expression.\rPerseverance brings good fortune.',
-      '"Out of the fullness of the heart the mouth speaketh." When a man\'s attitude of mind is so modest that this expresses itself in his outward behavior, it is a source of good fortune to him. For the possibility of exerting a lasting influence arises of itself and no one can interfere.',
-      'Nine in the third place means:\rA superior man of modesty and merit\rCarries things to conclusion.\rGood fortune.',
-      'This is the center of the hexagram, where its secret is disclosed. A distinguished name is readily earned by great achievements. If a man allows himself to be dazzled by fame, he will soon be criticized, and difficulties will arise. If, on the contrary, he remains modest despite his merit, he makes himself beloved and wins the support necessary for carrying his work through to the end.',
-      'Six in the fourth place means:\rNothing that would not further modesty\rIn movement.',
-      "Everything has its proper measure. Even modesty in behavior can be carried too far. Here, however, it is appropriate, because the place between a worthy helper below and a kindly ruler above carries great responsibility. The confidence of the man in superior place must not be abused nor the merits of the man in inferior placed concealed. There are officials who indeed do not strive for prominence; they hide behind the letter of ordinances, decline all responsibility, accept pay without giving its equivalent in work, and bear empty titles. This is the opposite of what is meant here by modesty. In such a position, modesty is shown by interest in one's work.",
-      "Six in the fifth place means:\rNo boasting of wealth before one's neighbor.\rIt is favorable to attack with force.\rNothing that would not further.",
-      'Modesty is not to be confused with weak good nature that lets things take their own course. When a man holds a responsible position, he must at times resort to energetic measures. In doing so he must not try to make an impression by boasting of his superiority but must make certain of the people around him. The measures taken should be purely objective and in no way personally offensive. Thus modesty manifests itself even in severity.',
-      "Six at the top means:\rModesty that comes to expression.\rIt is favorable to set armies marching\rTo chastise one's own city and one's country.",
-      "A person who is really sincere in his modesty must make it show in reality. He must proceed with great energy in this. When enmity arises nothing is easier than to lay the blame on another. A weak man takes offense perhaps, and draws back, feeling self-pity; he thinks that it is modesty that keeps him from defending himself. Genuine modesty sets one to creating order and inspires one to begin by disciplining one's own ego and one's immediate circle. Only through having the courage to marshal one's armies against oneself, will something forceful really be achieved.",
     ],
     lines: [
-      "15. Ch'ien / Modesty",
-      "above K'UN THE RECEPTIVE, EARTH below KEN KEEPING STILL, MOUNTAIN",
-      "This hexagram is made up of the trigrams K&ecirc;n, Keeping Still, mountain, and K'un. The mountain is the youngest son of the Creative, the representative of heaven and earth. It dispenses the blessings of heaven, the clouds and rain that gather round its summit, and thereafter shines forth radiant with heavenly light. This shows what modesty is and how it functions in great and strong men. K'un, the earth, stands above. Lowliness is a quality of the earth: this is the very reason why it appears in this hexagram as exalted, by being placed above the mountain. This shows how modesty functions in lowly, simple people: they are lifted up by it.",
-      'THE JUDGMENT',
-      'MODESTY creates success.\rThe superior man carries things through.',
-      'It is the law of heaven to make fullness empty and to make full what is modest; when the sun is at its zenith, it must, according to the law of heaven, turn toward its setting, and at its nadir it rises toward a new dawn. In obedience to the same law, the moon when it is full begins to wane, and when empty of light it waxes again. This heavenly law works itself out in the fates of men also. It is the law of earth to alter the full and to contribute to the modest. High mountains are worn down by the waters, and the valleys are filled up. It is the law of fate to undermine what is full and to prosper the modest. And men also hate fullness and love the modest.',
-      'The destinies of men are subject to immutable laws that must fulfill themselves. But man has it in his power to shape his fate, according as his behavior exposes him to the influence of benevolent or of destructive forces. When a man holds a high position and is nevertheless modest, he shines with the light of wisdom; if he is in a lowly position and is modest, he cannot be passed by. Thus the superior man can carry out his work to the end without boasting of what he has achieved.',
-      'THE IMAGE',
-      'Within the earth, a mountain:\rThe image of MODESTY.\rThus the superior man reduces that which is too much,\rAnd augments that which is too little.\rHe weighs things and makes them equal.',
-      'The wealth of the earth in which a mountain is hidden is not visible to the eye, because the depths are offset by the height of the mountain. Thus high and low competent each other and the result is the plain. Here an effect that it took a long time to achieve, but that in the end seems easy of accomplishment and self-evident, is used as the image of modesty. The superior man does the same thing when he establishes order in the world; he equalizes the extremes that are the source of social discontent and thereby creates just and equable conditions.',
-      '\rTHE LINES',
       'Six at the beginning means:\rA superior man modest about his modesty\rMay cross the great water.\rGood fortune.',
       'A dangerous enterprise, such as the crossing of a great stream, is made much more difficult if many claims and considerations have to be taken into account. On the other hand, the task is easy if it is attended to quickly and simply. Therefore the unassuming attitude of mind that goes with modesty fits a man to accomplish even difficult undertakings: he imposes no demands or stipulations but settles matters easily and quickly. Where no claims are put forward, no resistances arise.',
       'Six in the second place means:\rModesty that comes to expression.\rPerseverance brings good fortune.',
@@ -221,7 +197,8 @@ let commentary = [
     title: "12. P'i / Standstill [Stagnation]",
     heaven:
       "above CH'IEN THE CREATIVE, HEAVEN below K'UN THE RECEPTIVE, EARTH\rThis hexagram is the opposite of the preceding one. Heaven is above, drawing farther and farther away, while the earth below sinks farther into the depths. The creative powers are not in relation. It is a time of standstill and decline. This hexagram is linked with the seventh month (August- September), when the year has passed its zenith and autumnal decay is setting in.",
-    summary: 'THE JUDGMENT',
+    summary:
+      'This hexagram is the opposite of the preceding one. Heaven is above, drawing farther and farther away, while the earth below sinks farther into the depths. The creative powers are not in relation. It is a time of standstill and decline. This hexagram is linked with the seventh month (August- September), when the year has passed its zenith and autumnal decay is setting in.',
     judgement: [
       'STANDSTILL.\rEvil people do not further\rThe perseverance of the superior man.\rThe great departs;\rthe small approaches.',
     ],
@@ -281,33 +258,10 @@ let commentary = [
       'OPPOSITION.\rIn small matters,\rgood fortune.',
       'When people live in opposition and estrangement they cannot carry out a great undertaking in common; their points of view diverge too widely. In such circumstances one should above all not proceed brusquely, for that would only increase the existing opposition; instead, one should limit oneself to producing gradual effects in small matters. Here success can still be expected, because the situation is such that the opposition does not preclude all agreement.',
       'In general, opposition appears as an obstruction, but when it represents polarity within a comprehensive whole, it has also its useful and important functions. The oppositions of heaven and earth, spirit and nature, man and woman, when reconciled, bring about the creation and reproduction of life. In the world of visible things, the principle of opposites makes possible the differentiation by categories through which order is brought into the world.',
-      'THE IMAGE.',
-      'Above, fire; below.\rThe lake.\rThe image of OPPOSITION.\rThus amid all fellowship\rThe superior man retains his individuality.',
-      'The two elements, fire and water, never mingle but even when in contact retain their own natures. So the sutured man is never led into baseness or vulgarity through intercourse or community of interests with persons of another sort; regardless of all commingling, he will always preserve his individuality.',
-      'THE LINES',
-      'Nine at the beginning means:\rRemorse disappears.\rIf you lose your horse, do not run after it;\rIt will come back of its own accord.\rWhen you see evil people,\rGuard yourself against mistakes.',
-      "Even in times when oppositions prevail, mistakes can be avoided, so that remorse disappears. When opposition begins to manifest itself, a man must not try to bring about unity by force, for by so doing he would only achieve the contrary, just as a horse goes farther and farther away if one runs after it. It it is one's own horse, one can safely let it go; it will come back of its own accord. So too when someone who belongs with us is momentarily estranged because of a misunderstanding, he will return of his own accord if we leave matters to him. One the other hand, it is well to be cautious when evil men who do not belong with us force themselves upon us, again as the result of a misunderstanding. Here the important thing is to avoid mistakes. We must not try to shake off these evil men by force; this would give rise to real hostility. We must simply endure them. They will eventually withdraw of their own accord.",
-      'Nine in the second place means:\rOne meets his lord in a narrow street.\rNo blame.',
-      'As a result of misunderstandings, it has become impossible for people who by nature belong together to meet in the correct way. This being so, an accidental meeting under informal circumstances may serve the purpose, provided there is an inner affinity between them.',
-      "Six in the third place means:\rOne sees the wagon dragged back,\rThe oxen halted,\rA man's hair and nose cut off.\rNot a good beginning, but a good end.",
-      'Often it seems to a man as though everything were conspiring against him. He sees himself checked and hindered in his progress, insulted and dishonored. However, he must not let himself be misled; despite this opposition, he must cleave to the man with whom he knows he belongs. Thus, notwithstanding the bad beginning, the matter will end well.',
-      'Nine in the fourth place means:\rIsolated through opposition,\rOne meets a like-minded man\rWith whom one can associate in good faith.\rDespite the danger, no blame.',
-      'If a man finds himself in a company of people from whom he is separated by an inner opposition, he becomes isolated. But if in such a situation a man meets someone who fundamentally by the very law of his being, is kin to him, and whom he can trust completely, he overcomes all the dangers of isolation. His will achieves its aim, and he becomes free of faults.',
-      'Six in the fifth place means:\rRemorse disappears.\rThe companion bits his way through the wrappings.\rIf one goes to him,\rHow could it be a mistake?',
-      "Coming upon a sincere man, one fails to recognize him at first because of the general estrangement. However, he bites his way through the wrappings that are causing the separation. When such a companion thus reveals himself in his true character, it is one's duty to go to meet him and to work with him.",
-      "Nine at the top means:\rIsolated through opposition,\rOne sees one's companion as a pig covered with dirt,\rAs a wagon full of devils.\rFirst one draws a bow against him, then one lays the bow aside.\rHe is not a robber; he will woo at the right time.\rAs one goes, rain falls;\rthen good fortune comes.",
-      'Here the isolation is due to misunderstanding; it is brought about not by outer circumstances but by inner conditions. A man misjudges his best friends, taking them to be as unclean as a dirty pig in and as dangerous as a wagon full of devils. He adopts an attitude of defense. But in the end, realizing his mistake, he lays aside the bow, perceiving that the other is approaching with the best intentions for the purpose of close union. Thus the tension is relieved. The union resolves the tension, just as falling rain relieves the sultriness preceding a thunderstorm. All goes well, for just when opposition reaches its climax it changes over to its antithesis.',
     ],
     image: [
-      "38. K'uei / Opposition",
-      'above LI THE CLINGING, FLAME below TUI THE JOYOUS, LAKE',
-      'This hexagram is composed of the trigram Li above, i.e., flame, which burns upward, and Tui below, i.e., the lake, which seeps downward. These two movements are indirect contrast. Furthermore, LI is the second daughter and Tui the youngest daughter, and although they live in the same house they belong to different men; hence their wills are not the same but are divergently directed.',
-      'THE JUDGMENT',
-      'OPPOSITION.\rIn small matters,\rgood fortune.',
-      'When people live in opposition and estrangement they cannot carry out a great undertaking in common; their points of view diverge too widely. In such circumstances one should above all not proceed brusquely, for that would only increase the existing opposition; instead, one should limit oneself to producing gradual effects in small matters. Here success can still be expected, because the situation is such that the opposition does not preclude all agreement.',
-      'In general, opposition appears as an obstruction, but when it represents polarity within a comprehensive whole, it has also its useful and important functions. The oppositions of heaven and earth, spirit and nature, man and woman, when reconciled, bring about the creation and reproduction of life. In the world of visible things, the principle of opposites makes possible the differentiation by categories through which order is brought into the world.',
-      'THE IMAGE.',
       'Above, fire; below.\rThe lake.\rThe image of OPPOSITION.\rThus amid all fellowship\rThe superior man retains his individuality.',
+      'The two elements, fire and water, never mingle but even when in contact retain their own natures. So the sutured man is never led into baseness or vulgarity through intercourse or community of interests with persons of another sort; regardless of all commingling, he will always preserve his individuality.',
     ],
     lines: [
       'Nine at the beginning means:\rRemorse disappears.\rIf you lose your horse, do not run after it;\rIt will come back of its own accord.\rWhen you see evil people,\rGuard yourself against mistakes.',
@@ -321,6 +275,7 @@ let commentary = [
       'Six in the fifth place means:\rRemorse disappears.\rThe companion bits his way through the wrappings.\rIf one goes to him,\rHow could it be a mistake?',
       "Coming upon a sincere man, one fails to recognize him at first because of the general estrangement. However, he bites his way through the wrappings that are causing the separation. When such a companion thus reveals himself in his true character, it is one's duty to go to meet him and to work with him.",
       "Nine at the top means:\rIsolated through opposition,\rOne sees one's companion as a pig covered with dirt,\rAs a wagon full of devils.\rFirst one draws a bow against him, then one lays the bow aside.\rHe is not a robber; he will woo at the right time.\rAs one goes, rain falls;\rthen good fortune comes.",
+      'Here the isolation is due to misunderstanding; it is brought about not by outer circumstances but by inner conditions. A man misjudges his best friends, taking them to be as unclean as a dirty pig in and as dangerous as a wagon full of devils. He adopts an attitude of defense. But in the end, realizing his mistake, he lays aside the bow, perceiving that the other is approaching with the best intentions for the purpose of close union. Thus the tension is relieved. The union resolves the tension, just as falling rain relieves the sultriness preceding a thunderstorm. All goes well, for just when opposition reaches its climax it changes over to its antithesis.',
     ],
   },
   {
@@ -355,7 +310,8 @@ let commentary = [
     title: "11. T'ai / Peace",
     heaven:
       "above K'UN THE RECEPTIVE, EARTH below CH'IEN THE CREATIVE, HEAVEN\rThe Receptive, which moves downward, stands above; the Creative, which moves upward, is below. Hence their influences meet and are in harmony, so that all living things bloom and prosper. This hexagram belongs to the first month (February-March), at which time the forces of nature prepare the new spring.",
-    summary: 'THE JUDGMENT',
+    summary:
+      'The Receptive, which moves downward, stands above; the Creative, which moves upward, is below. Hence their influences meet and are in harmony, so that all living things bloom and prosper. This hexagram belongs to the first month (February-March), at which time the forces of nature prepare the new spring.',
     judgement: [
       'PEACE.\rThe small departs,\rThe great approaches.\rGood fortune.\rSuccess.',
       'This hexagram denotes a time in nature when heaven seems to be on earth. Heaven has placed itself beneath the earth, and so their powers unite in deep harmony. Then peace and blessing descend upon all living things.',
@@ -631,9 +587,11 @@ let commentary = [
     title: "9. Hsiao Ch'u / The Taming Power of the Small",
     heaven:
       "above SUN THE GENTLE, WIND below CH'IEN THE CREATIVE, HEAVEN\rThis hexagram means the force of the small--the power of the shadowy--that restrains, tames, impedes. A weak line in the fourth place, that of the minister, holds the five strong lines in check. In the Image it is the wind blowing across the sky. The wind restrains the clouds, the rising breath of the Creative, and makes them grow dense, but as yet is not strong enough to turn them to rain. The hexagram presents a configuration of circumstances in which a strong element is temporarily held in leash by a weak element. It is only through gentleness that this can have a successful outcome.",
-    summary: 'THE JUDGMENT',
+    summary:
+      'This hexagram means the force of the small--the power of the shadowy--that restrains, tames, impedes. A weak line in the fourth place, that of the minister, holds the five strong lines in check. In the Image it is the wind blowing across the sky. The wind restrains the clouds, the rising breath of the Creative, and makes them grow dense, but as yet is not strong enough to turn them to rain. The hexagram presents a configuration of circumstances in which a strong element is temporarily held in leash by a weak element. It is only through gentleness that this can have a successful outcome.',
     judgement: [
       'THE TAMING POWER OF THE SMALL\rHas success.\rDense clouds, no rain from our western region.',
+      'This image refers to the state of affairs in China at the time when King W&ecirc;n, who came originally from the west, was in the east at the court of the reigning tyrant Chou Hsin. The moment for action on a large scale had not yet arrived. King W&ecirc;n could only keep the tyrant somewhat in check by friendly persuasion. Hence the image of many clouds, promising moisture and blessing to the land, although as yet no rain falls. The situation is not unfavorable; there is a prospect of ultimate success, but there are still obstacles in the way, and we can merely take preparatory measures. Only through the small means of friendly persuasion can we exert any influence. The time has not yet come for sweeping measures. However, we may be able, to a limited extent, to act as a restraining and subduing influence. To carry out our purpose we need firm determination within and gentleness and adaptability in external relations.',
     ],
     image: [
       'The wind drives across heaven:\rThe image of THE TAMING POWER OF THE SMALL.\rThus the superior man Refines the outward aspect of his nature.',
@@ -710,9 +668,9 @@ let commentary = [
   {
     num: 5,
     title: '5. Hs&uuml; / Waiting (Nourishment)',
-    heaven:
-      "above K'AN THE ABYSMAL, WATER below CH'IEN THE CREATIVE, HEAVEN\rAll beings have need of nourishment from above. But the gift of food comes in its own time, and for this one must wait. This hexagram shows the clouds in the heavens, giving rain to refresh all that grows and to provide mankind with food and drink. The rain will come in its own time. We cannot make it come; we have to wait for it. The idea of waiting is further suggested by the attributes of the two trigrams--strength within, danger in from. Strength in the face of danger does not plunge ahead but bides its time, whereas weakness in the face of danger grows agitated and has not the patience to wait.",
-    summary: 'THE JUDGMENT',
+    heaven: "above K'AN THE ABYSMAL, WATER below CH'IEN THE CREATIVE, HEAVEN\r",
+    summary:
+      'All beings have need of nourishment from above. But the gift of food comes in its own time, and for this one must wait. This hexagram shows the clouds in the heavens, giving rain to refresh all that grows and to provide mankind with food and drink. The rain will come in its own time. We cannot make it come; we have to wait for it. The idea of waiting is further suggested by the attributes of the two trigrams--strength within, danger in from. Strength in the face of danger does not plunge ahead but bides its time, whereas weakness in the face of danger grows agitated and has not the patience to wait.',
     judgement: [
       'WAITING.\rIf you are sincere,\rYou have light and success.\rPerseverance brings good fortune.\rIt furthers one to cross the great water.',
     ],
