@@ -51,5 +51,5 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## License
 
-This project is licensed under the MIT license, Copyright (c) 2019 Michael Litchev.
+This project is licensed under the MIT license, Copyright (c) 2021 Michael Litchev.
 For more information see `LICENSE.md`.
