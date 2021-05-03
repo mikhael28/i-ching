@@ -25,8 +25,8 @@ export function App() {
   return (
     <BrowserRouter>
       <Helmet
-        titleTemplate="Oracle of Changes TS"
-        defaultTitle="Oracle of Changes TS"
+        titleTemplate="Oracle of Changes"
+        defaultTitle="Oracle of Changes"
         htmlAttributes={{ lang: i18n.language }}
       >
         <meta
