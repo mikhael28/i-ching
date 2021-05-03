@@ -72,9 +72,7 @@ export function QuestionPage(props) {
                 type="text"
                 placeholder="Write here..."
               />
-              <button disabled={disabled}>
-                <AiOutlineEnter />
-              </button>
+              <button disabled={disabled}>Ask</button>
             </div>
           </div>
         </form>
@@ -91,7 +89,11 @@ export function QuestionPage(props) {
           &nbsp;&nbsp;Hiring?
         </Item>
 
-        <Item>
+        <Item
+          href="https://github.com/mikhael28/i-ching"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {' '}
           <AiFillGithub />
           &nbsp;&nbsp;Source Code
