@@ -30,10 +30,11 @@ export function Nav() {
   );
 }
 
+// @TODO: increase font-size for larger screens
+
 const Wrapper = styled.nav`
   display: flex;
   justify-content: space-between;
-  /* margin-right: -1rem; */
 `;
 
 const Item = styled.a`

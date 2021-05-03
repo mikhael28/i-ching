@@ -12,7 +12,6 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import { GlobalStyle } from '../styles/global-styles';
 import { JudgementPage } from './pages/JudgementPage/Loadable';
-import { HomePage } from './pages/HomePage/Loadable';
 import { QuestionPage } from './pages/QuestionPage/index';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 import { TimerPage } from './pages/TimerPage/index';
@@ -42,7 +41,6 @@ export function App() {
           path={process.env.PUBLIC_URL + '/'}
           component={QuestionPage}
         />
-        <Route exact path={`/demo`} component={HomePage} />
         <Route exact path={`/tao`} component={TaoPage} />
         <Route exact path={`/meditation`} component={TimerPage} />
         <Route exact path={`/consulting`} component={LoadingPage} />

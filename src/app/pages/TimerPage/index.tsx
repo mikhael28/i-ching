@@ -31,7 +31,6 @@ export function TimerPage(props) {
   };
 
   const getTimeSeconds = time => (minuteSeconds - time) | 0;
-  const getTimeMinutes = time => ((time % hourSeconds) / minuteSeconds) | 0;
 
   useEffect(() => {
     let storedQuestion = localStorage.getItem('question');

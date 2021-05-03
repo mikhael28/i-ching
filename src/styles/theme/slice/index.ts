@@ -1,7 +1,7 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from 'utils/@reduxjs/toolkit';
 import { useInjectReducer } from 'utils/redux-injectors';
-import { getThemeFromStorage } from '../utils';
+// import { getThemeFromStorage } from '../utils';
 import { ThemeKeyType, ThemeState } from './types';
 
 export const initialState: ThemeState = {
