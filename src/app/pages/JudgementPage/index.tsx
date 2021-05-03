@@ -4,12 +4,11 @@ import { P } from '../../components/P';
 import { NavBar } from 'app/components/NavBar';
 import { TextButton } from 'app/components/TextButton';
 import { Helmet } from 'react-helmet-async';
-import { commentaryLibrary } from '../../../utils/commentary';
 import { hexagrams } from '../../../utils/hexagrams';
 import { LineCast } from 'utils/yarrow';
 
 export function JudgementPage(props) {
-  const [question, setQuestion] = useState<string>('');
+  // const [question, setQuestion] = useState<string>('');
   const [imageString, setImageString] = useState<string>('');
   const [commentaryString, setCommentaryString] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
@@ -24,9 +23,15 @@ export function JudgementPage(props) {
     topTrigram: 0,
     bottomTrigram: 0,
     binary: 'string',
-    lines: [1, 2],
+    lineNumbers: [0],
     linesString: '',
     description: '',
+    title: '',
+    heaven: '',
+    summary: '',
+    judgement: [''],
+    image: [''],
+    lines: [''],
   });
 
   const [changingJudgement, setChangingJudgement] = useState<Judgement>({
@@ -38,29 +43,15 @@ export function JudgementPage(props) {
     topTrigram: 0,
     bottomTrigram: 0,
     binary: 'string',
-    lines: [1, 2],
+    lineNumbers: [0],
     linesString: '',
     description: '',
-  });
-
-  const [commentary, setCommentary] = useState<Commentary>({
-    num: 0,
     title: '',
     heaven: '',
     summary: '',
-    judgement: [],
-    image: [],
-    lines: [],
-  });
-
-  const [changingCommentary, setChangingCommentary] = useState<Commentary>({
-    num: 0,
-    title: '',
-    heaven: '',
-    summary: '',
-    judgement: [],
-    image: [],
-    lines: [],
+    judgement: [''],
+    image: [''],
+    lines: [''],
   });
 
   useEffect(() => {
@@ -83,30 +74,26 @@ export function JudgementPage(props) {
     console.log(hexagrams[index]);
     // this code below is ridiculous, need to normalize JSON
     setJudgement(hexagrams[index - 1]);
-    for (let i = 0; i < commentaryLibrary.length; i++) {
-      if (commentaryLibrary[i].num === index) {
-        setCommentary(commentaryLibrary[i]);
-      }
-    }
     let logo = require(`../../../utils/assets/${index}.png`);
     setImageString(logo.default);
     setLoading(false);
   }
 
-  interface Trigram {
-    number: number;
-    names: string[];
-    chineseName: string;
-    pinyinName: string;
-    character: string;
-    attribute: string;
-    images: string[];
-    chineseImage: string;
-    pinyinImage: string;
-    familyRelationship: string;
-    binary: string;
-    lines: Number[];
-  }
+  // Not currently used
+  // interface Trigram {
+  //   number: number;
+  //   names: string[];
+  //   chineseName: string;
+  //   pinyinName: string;
+  //   character: string;
+  //   attribute: string;
+  //   images: string[];
+  //   chineseImage: string;
+  //   pinyinImage: string;
+  //   familyRelationship: string;
+  //   binary: string;
+  //   lines: Number[];
+  // }
 
   interface Judgement {
     number: number;
@@ -117,42 +104,35 @@ export function JudgementPage(props) {
     topTrigram: number;
     bottomTrigram: number;
     binary: string;
-    lines: number[];
+    lineNumbers: number[];
     description: string;
     linesString: string;
-  }
-
-  interface Commentary {
-    num: number;
     title: string;
     heaven: string;
     summary: string;
     judgement: string[];
-    image: string[];
     lines: string[];
+    image: string[];
   }
 
-  const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    setQuestion(evt.currentTarget.value);
-  };
+  // @TODO: add functionality for saving questions
+  // function validateForm() {
+  //   if (question.length > 8) {
+  //     return true;
+  //   }
+  // }
 
-  function validateForm() {
-    if (question.length > 8) {
-      return true;
-    }
-  }
+  // const handleSubmit = async (
+  //   e: React.FormEvent<HTMLFormElement>,
+  // ): Promise<void> => {
+  //   e.preventDefault();
 
-  const handleSubmit = async (
-    e: React.FormEvent<HTMLFormElement>,
-  ): Promise<void> => {
-    e.preventDefault();
-
-    if (validateForm()) {
-      console.log('Submitting question: ', question);
-      //   localStorage.setItem('question', question);
-      //   props.history.push('/meditation');
-    }
-  };
+  //   if (validateForm()) {
+  //     console.log('Submitting question: ', question);
+  //     //   localStorage.setItem('question', question);
+  //     //   props.history.push('/meditation');
+  //   }
+  // };
 
   function organizeDivination(hexagrams) {
     let castDivination: number[] = [];
@@ -177,13 +157,9 @@ export function JudgementPage(props) {
     }
     let castString = castDivination.join('');
     let changeString = changingDivination.join('');
-    let castHex;
-    let changeHex;
 
     for (let i = 0; i < hexagrams.length; i++) {
       if (hexagrams[i].linesString === castString) {
-        castHex = hexagrams[i];
-        console.log('hex: ', castHex);
         setJudgement(hexagrams[i]);
         let logo = require(`../../../utils/assets/${hexagrams[i].number}.png`);
         setImageString(logo.default);
@@ -193,7 +169,6 @@ export function JudgementPage(props) {
 
     for (let m = 0; m < hexagrams.length; m++) {
       if (hexagrams[m].linesString === changeString) {
-        changeHex = hexagrams[m];
         setChangingJudgement(hexagrams[m]);
         let changingLogo = require(`../../../utils/assets/${hexagrams[m].number}.png`);
         setCommentaryString(changingLogo.default);
@@ -227,6 +202,7 @@ export function JudgementPage(props) {
               height: 120,
               width: 120,
             }}
+            alt=""
             src={imageString}
           />
           <div style={{ marginRight: '10%', marginLeft: '10%' }}>
@@ -252,6 +228,7 @@ export function JudgementPage(props) {
                   height: 120,
                   width: 120,
                 }}
+                alt=""
                 src={commentaryString}
               />
               <div style={{ marginRight: '10%', marginLeft: '10%' }}>
@@ -267,8 +244,8 @@ export function JudgementPage(props) {
             Begin Anew
           </TextButton>
           <div>
-            <P>{commentary.summary}</P>
-            {commentary.lines.map(line => {
+            <P>{judgement.summary}</P>
+            {judgement.lines.map(line => {
               return <P>{line}</P>;
             })}
           </div>
