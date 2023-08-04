@@ -10,6 +10,7 @@ export const ThemeProvider = (props: { children: React.ReactChild }) => {
   const theme = useSelector(selectTheme);
   return (
     <OriginalThemeProvider theme={theme}>
+      {/* @ts-ignore */}
       {React.Children.only(props.children)}
     </OriginalThemeProvider>
   );

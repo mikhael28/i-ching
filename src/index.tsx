@@ -42,9 +42,12 @@ const store = configureAppStore();
 const MOUNT_NODE = document.getElementById('root') as HTMLElement;
 
 ReactDOM.render(
+  // @ts-ignore
   <Provider store={store}>
     <ThemeProvider>
+      {/* @ts-ignore */}
       <HelmetProvider>
+        {/* @ts-ignore */}
         <React.StrictMode>
           <App />
         </React.StrictMode>

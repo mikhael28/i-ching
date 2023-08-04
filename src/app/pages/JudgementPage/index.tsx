@@ -179,6 +179,7 @@ export function JudgementPage(props) {
 
   return (
     <>
+     {/* @ts-ignore */}
       <Helmet>
         <title>The Judgement</title>
         <meta name="description" content="Page not found" />

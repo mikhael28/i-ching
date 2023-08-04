@@ -44,6 +44,7 @@ export function TimerPage(props) {
 
   return (
     <>
+     {/* @ts-ignore */}
       <Helmet>
         <title>Consult the Oracle</title>
         <meta name="description" content="Page not found" />

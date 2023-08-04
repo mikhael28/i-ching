@@ -23,7 +23,9 @@ import { HexagramsPage } from './pages/HexagramsPage/index';
 export function App() {
   const { i18n } = useTranslation();
   return (
+    // @ts-ignore
     <BrowserRouter>
+    {/* @ts-ignore */}
       <Helmet
         titleTemplate="Oracle of Changes"
         defaultTitle="Oracle of Changes"

@@ -26,6 +26,7 @@ export function RecordsPage(props) {
   }, []);
   return (
     <>
+     {/* @ts-ignore */}
       <Helmet>
         <title>Past Records</title>
         <meta

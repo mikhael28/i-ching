@@ -45,6 +45,7 @@ export function TaoPage() {
   }
   return (
     <div style={{ marginBottom: -30 }}>
+       {/* @ts-ignore */}
       <Helmet>
         <title>The Tao Te Ching</title>
         <meta name="description" content="The Tao Te Ching" />

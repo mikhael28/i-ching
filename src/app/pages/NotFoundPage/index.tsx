@@ -9,6 +9,7 @@ import { StyleConstants } from 'styles/StyleConstants';
 export function NotFoundPage() {
   return (
     <>
+     {/* @ts-ignore */}
       <Helmet>
         <title>404 Page Not Found</title>
         <meta name="description" content="Page not found" />

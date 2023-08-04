@@ -8,6 +8,7 @@ import './styles.css';
 export function HexagramsPage(props) {
   return (
     <>
+    {/* @ts-ignore */}
       <Helmet>
         <title>Hexagrams List</title>
         <meta name="description" content="Research and review" />

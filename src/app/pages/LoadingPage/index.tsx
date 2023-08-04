@@ -13,6 +13,7 @@ export function LoadingPage(props) {
   }, []);
   return (
     <>
+     {/* @ts-ignore */}
       <Helmet>
         <title>Consulting</title>
         <meta name="description" content="Consulting in Progress" />
