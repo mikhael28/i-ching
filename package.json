@@ -75,13 +75,6 @@
       "prettier --write"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn run checkTs && lint-staged && yarn run verify-startingTemplate-changes",
-      "prepare-commit-msg": "devmoji -e",
-      "commit-msg": "if git-branch-is dev; then commitlint -E HUSKY_GIT_PARAMS; fi"
-    }
-  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",

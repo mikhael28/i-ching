@@ -17,6 +17,8 @@ export const tao = [
 		}
 	},
 
+	// translate the above javascript object, keep the same keys, but translate the values into strings of Chinese characters
+	
 	{
 		passage: {
 			chapterNum: '2',
