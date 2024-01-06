@@ -24,7 +24,7 @@ export function HexagramsPage(props) {
                 className="exp-card"
                 onClick={() => props.history.push(`/judgement/${hex.number}`)}
               >
-                <img src={img.default} alt="" />
+                <img src={img} alt="" />
                 <p>{hex.number}</p>
               </div>
             );

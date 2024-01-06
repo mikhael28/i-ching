@@ -44,7 +44,7 @@ export function QuestionPage(props) {
     e.preventDefault();
 
     if (validateForm()) {
-      console.log('Submitting question: ', question);
+      // console.log('Submitting question: ', question);
       localStorage.setItem('question', question);
       props.history.push('/meditation');
     }

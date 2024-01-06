@@ -59,8 +59,8 @@ export function JudgementPage(props) {
     if (splitPath.length === 2) {
       organizeDivination(hexagrams);
     } else {
-      console.log(splitPath[2].length);
-      console.log(splitPath);
+      // console.log(splitPath[2].length);
+      // console.log(splitPath);
       if (splitPath[2].length === 0) {
         organizeDivination(hexagrams);
       } else {
@@ -70,12 +70,12 @@ export function JudgementPage(props) {
   }, []);
 
   function runAlgorithm(index) {
-    console.log(index);
-    console.log(hexagrams[index]);
+    // console.log(index);
+    // console.log(hexagrams[index]);
     // this code below is ridiculous, need to normalize JSON
     setJudgement(hexagrams[index - 1]);
     let logo = require(`../../../utils/assets/${index}.png`);
-    setImageString(logo.default);
+    setImageString(logo);
     setLoading(false);
   }
 
@@ -162,7 +162,7 @@ export function JudgementPage(props) {
       if (hexagrams[i].linesString === castString) {
         setJudgement(hexagrams[i]);
         let logo = require(`../../../utils/assets/${hexagrams[i].number}.png`);
-        setImageString(logo.default);
+        setImageString(logo);
         break;
       }
     }
@@ -171,7 +171,7 @@ export function JudgementPage(props) {
       if (hexagrams[m].linesString === changeString) {
         setChangingJudgement(hexagrams[m]);
         let changingLogo = require(`../../../utils/assets/${hexagrams[m].number}.png`);
-        setCommentaryString(changingLogo.default);
+        setCommentaryString(changingLogo);
       }
     }
     setLoading(false);

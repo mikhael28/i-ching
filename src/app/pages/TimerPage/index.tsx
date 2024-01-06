@@ -62,10 +62,10 @@ export function TimerPage(props) {
             initialRemainingTime={remainingTime % minuteSeconds}
             onComplete={totalElapsedTime => {
               setMinutesState(minutesState - 1);
-              console.log('Remaining time: ', remainingTime);
-              console.log('Total elapsed time', totalElapsedTime);
-              console.log(remainingTime - totalElapsedTime);
-              console.log(remainingTime - totalElapsedTime === 0);
+              // console.log('Remaining time: ', remainingTime);
+              // console.log('Total elapsed time', totalElapsedTime);
+              // console.log(remainingTime - totalElapsedTime);
+              // console.log(remainingTime - totalElapsedTime === 0);
               if (remainingTime - totalElapsedTime === 0) {
                 setLoading(true);
                 props.history.push('/consulting');

@@ -45,7 +45,7 @@ export function RecordsPage(props) {
                 className="exp-card"
                 onClick={() => props.history.push(`/judgement/${hex.hexagram}`)}
               >
-                <img src={img.default} />
+                <img src={img} />
                 <p>{hex.hexagram}</p>
                 <p>{hex.question}</p>
                 <p>{hex.date}</p>
